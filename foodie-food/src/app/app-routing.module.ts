@@ -4,7 +4,6 @@ import { LoginComponent } from './auth/login/login.component';
 import { HomeComponent } from './home/home.component';
 import { RegistrationComponent } from './auth/registration/registration.component';
 import { CartComponent } from './cart/cart.component';
-import { PricingComponent } from './pricing/pricing.component';
 import { MenuComponent } from './menu/menu.component';
 
 const routes: Routes = [
@@ -24,10 +23,7 @@ const routes: Routes = [
     path: 'menu',
     component: MenuComponent
   },
-  {
-    path: 'pricing',
-    component: PricingComponent
-  },
+
   {
     path: 'cart',
     component: CartComponent

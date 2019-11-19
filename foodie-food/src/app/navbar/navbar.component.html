@@ -5,16 +5,13 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav">
     <li class="nav-item active">
-        <a class="nav-link" [routerLink]="'/home'">FOODIE<span class="sr-only">(current)</span></a>
+        <a class="nav-link" [routerLink]="'/home'">{{navBarValues[0]}}<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" [routerLink]="'/menu'">Menu<span class="sr-only">(current)</span></a>
+        <a class="nav-link" [routerLink]="'/menu'">{{navBarValues[1]}}<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" [routerLink]="'/pricing'">Pricing<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" [routerLink]="'/cart'">Cart<span class="sr-only">(current)</span></a>
+        <a class="nav-link" [routerLink]="'/cart'">{{navBarValues[2]}} ({{cart.cartCount}})<span class="sr-only">(current)</span></a>
       </li>
       </ul>
       <ul class="nav navbar-nav ml-auto">
@@ -25,7 +22,7 @@
         <a class="nav-link" [routerLink]="'/register'" *ngIf="!isLoggedIn">Sign Up<span class="sr-only">(current)</span></a>
       </li>
       <li class="navbar-right active">
-        <a class="nav-link" *ngIf="isLoggedIn">Welcome {{ user_displayName }}!<span class="sr-only">(current)</span></a>
+        <a class="nav-link" *ngIf="isLoggedIn">Welcome {{ userDisplayName }}!<span class="sr-only">(current)</span></a>
       </li>
       <li class="navbar-right active">
         <a class="nav-link" *ngIf="isLoggedIn" [routerLink]="''" (click)="signOut()">Sign Out<span class="sr-only">(current)</span></a>

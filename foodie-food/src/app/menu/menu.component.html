@@ -1,4 +1,52 @@
-<p>
-        This page will show to the user all the food options available.
-      </p>
+<div class="container">
+  <div class="row">
+      <div class="col-12 mt-4">
+          <h3 class="text-center">Lunch</h3>
+          <hr class="accent my-5">
+      </div>
+      <div class="card-columns">
+          <div class="card card-body">
+              <h6 class="text-truncate">{{breakfast[0]}}</h6>
+              <p class="small"># egg whites, served with a pile of bacon.</p>
+              <button (click)="addToCart('Eggs and Bacon', '7.00')">add to cart</button>
+          </div>
+          <div class="card card-body">
+            <h6 class="text-truncate">{{breakfast[1]}}</h6>
+            <p class="small">8oz serloin steak and 3 hard boiled eggs.</p>
+            <button (click)="addToCart('Steak and Eggs', '8.00')">add to cart</button>
+        </div>
+          <div class="card card-body">
+              <h6 class="text-truncate">{{breakfast[2]}}</h6>
+              <p class="small">5 servings of cereal.</p>
+              <button (click)="addToCart('Cereal', '6.00')">add to cart</button>
+          </div>
+      </div>
+      <div class="col-12 mt-4">
+          <h3 class="text-center">Dinner</h3>
+          <hr class="accent my-5">
+      </div>
+      <div class="card-columns">
+          <div class="card card-body">
+              <h6 class="text-truncate">{{lunch[0]}}</h6>
+              <p class="small">Sustainably raised Argentine red shrimp, fried golden brown and served with chipotle mayonnaise for dipping.</p>
+              <button (click)="addToCart('Fried Shrimp','9.00')">add to cart</button>
+          </div>
+          <div class="card card-body">
+              <h6 class="text-truncate">{{lunch[1]}}</h6>
+              <p class="small">Crusty sliced Italian bread topped with basil, extra virgin olive oil, chopped tomatoes, garlic and fresh mozzarella cheese. Baked until it is nice and crispy and served with a side of balsamic reduction.</p>
+              <button (click)="addToCart('Tuscan Bruschetta', '10.00')">add to cart</button>
+          </div>
+          <div class="card card-body">
+              <h6 class="text-truncate">{{lunch[2]}}</h6>
+              <p class="small">Jack and cheddar cheese, chopped mild green chilies in a pan grilled flour tortilla. Served with sour cream, guacamole and fresh pico de gallo.</p>
+              <button (click)="addToCart('quesadilla', '9.00')">add to cart</button>
+          </div>
+      </div>
+     
       
+      <div class="col-12 mt-4">
+          <hr class="accent my-5">
+      </div>
+  </div>
+</div>
+

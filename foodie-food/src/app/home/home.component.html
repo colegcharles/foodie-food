@@ -1,1 +1,81 @@
-<p>home works!</p>
+<html>
+
+<head>
+    <title></title>
+</head>
+<body>
+        <header>
+                <h2>Foodie-Food</h2>
+        </header>
+       
+        <button class="start" (click) = "start()">Get Started</button>
+        <button class="about" (click) = "About()">About Us</button>
+        <button class="patterns" (click) = "Patterns()">OOD Design Patters</button>
+
+        <div *ngIf="!about">
+                <h1>About Us</h1>
+                <p>
+                        Foodie-Food is a meal preperation service for people who do not have
+                        time to cook for themselves, but still want to live healthy lifestyles.
+                        We offer simple, flexible, and delicious plans that are delivered right to
+                        your front door. Eliminate the stress of grocery shopping and cooking!
+                        Click the start button to learn how you can get your meals today.
+
+                </p>
+                <br>
+                <p>
+                        Total Sales: 100
+                </p>
+                <br>
+                <p>
+                        Total Customers: {{cart.totalCustomers}}
+                </p>
+        </div>
+
+
+        <div *ngIf="!patterns">
+                <h1>Design Patterns</h1>
+                <p>
+                        1.) Decorator Pattern
+                </p><br>
+                <p>
+                        2.) Facade Pattern
+                </p><br>
+                <p>
+                        3.) Iterator Pattern
+                </p><br>
+                <p>
+                        4.) Template Pattern
+                </p><br>
+        </div>
+
+
+        <div *ngIf="!isCollapsed">
+                <h1>Getting Started</h1>
+                <div class="row">
+                        Step {{step1}}
+                         <div><button class="next" (click) = "Next1()">Next</button></div>
+                </div>
+                        
+                                        
+                <div *ngIf="!next1" class="row"> 
+                         Step {{step2}}
+                        <div><button class="next" (click) = "Next2()">Next</button></div> 
+                 </div> 
+
+                 <div *ngIf="!next2" class="row">
+                         Step {{step3}}
+                        <div><button class="next" (click) = "Next3()">Next</button> </div>
+                 </div>
+                        
+                  <div *ngIf="!next3" class="row">
+                        Step {{step4}}
+                </div>
+        </div>
+        
+
+    <hr>
+    <p class="trademark">&#169; Foodie-Food, 2019</p>
+
+</body>
+</html>

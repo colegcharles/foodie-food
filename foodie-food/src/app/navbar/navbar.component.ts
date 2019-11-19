@@ -1,6 +1,14 @@
+import { CartService } from './../services/cartService';
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
+import { Home } from '../patterns/template/home';
+import { NavBar } from '../patterns/template/navbar';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { Menu } from '../patterns/template/menu';
+import { Cart } from '../patterns/template/cart';
+import { auth } from 'firebase';
+import { CartService } from '../services/cartService.ts';
 
 @Component({
   selector: 'app-navbar',
@@ -8,41 +16,59 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  public isLoggedIn: Boolean;
-  public user_displayName: String;
-  public user_email: String;
+  public navBarValues: string[] = [];
+  public isLoggedIn: boolean;
+  public userDisplayName: string;
+  public userEmail: string;
+  public array: any[] = [];
+  public userName: string;
+  public cartCount = 0;
   constructor(
     private afAuth: AngularFireAuth,
-    private router: Router
-  ) {
-    this.afAuth.authState.subscribe(
-      (auth) => {
-        if (auth == null) {
-          console.log("Logged out");
-          this.isLoggedIn = false;
-          this.user_displayName = '';
-          this.user_email = '';
-          this.router.navigate(['login']);
-        } else {
-          this.isLoggedIn = true;
-          this.user_displayName = auth.displayName
-          this.user_email = auth.email;
-          console.log("Logged in");
-          console.log(this.user_displayName);
-          console.log(this.user_email);
-          console.log(auth);
-          console.log(this.isLoggedIn);
-          this.router.navigate(['']);
-        }
-      }
-    );
-  }
-   
+    private db: AngularFireDatabase,
+    private router: Router,
+    private cart: CartService
+  ) {}
+
 
   ngOnInit() {
-    
+
+      this.afAuth.authState.subscribe(
+        (auth) => {
+          if (auth == null) {
+            this.isLoggedIn = false;
+            this.userDisplayName = '';
+            this.userEmail = '';
+            this.router.navigate(['login']);
+          } else {
+            this.isLoggedIn = true;
+            this.userDisplayName = auth.displayName;
+            this.userEmail = auth.email;
+            this.router.navigate(['']);
+          }
+
+          this.cart.GetItems(this.userDisplayName);
+
+        }
+      );
+
+
+      const homeNavBar: NavBar = new Home();
+      const menuNavBar: NavBar = new Menu();
+      const cartNavBar: NavBar = new Cart();
+
+      this.navBarValues.push(homeNavBar.show());
+      this.navBarValues.push(menuNavBar.show());
+      this.navBarValues.push(cartNavBar.show());
+
+
+
+
+
   }
   signOut() {
     return this.afAuth.auth.signOut();
   }
 }
+
+
