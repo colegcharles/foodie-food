@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
   patterns = true;
 
   constructor(
-    private cart: CartService
+    public cart: CartService
   ) { }
 
   ngOnInit() {
@@ -59,6 +59,7 @@ export class HomeComponent implements OnInit {
 
   About() {
     this.cart.getTotalCustomers();
+    this.cart.getTotalOrderAmount();
     this.isCollapsed = true;
     this.about = false;
     this.patterns = true;

@@ -6,30 +6,31 @@
 <body>
         <header>
                 <h2>Foodie-Food</h2>
+                <button class="start" (click) = "start()">Get Started</button>
+                <button class="about" (click) = "About()">About Us</button>
+                <button class="patterns" (click) = "Patterns()">Patterns</button>
+                
         </header>
        
-        <button class="start" (click) = "start()">Get Started</button>
-        <button class="about" (click) = "About()">About Us</button>
-        <button class="patterns" (click) = "Patterns()">OOD Design Patters</button>
+        
 
         <div *ngIf="!about">
                 <h1>About Us</h1>
-                <p>
-                        Foodie-Food is a meal preperation service for people who do not have
-                        time to cook for themselves, but still want to live healthy lifestyles.
+                <p id='about'>
+                        Foodie-Food is a meal preperation service.
                         We offer simple, flexible, and delicious plans that are delivered right to
                         your front door. Eliminate the stress of grocery shopping and cooking!
                         Click the start button to learn how you can get your meals today.
 
                 </p>
                 <br>
-                <p>
-                        Total Sales: 100
-                </p>
-                <br>
-                <p>
+                <div id='sales'>
+                        Total Sales: {{cart.totalOrders}}
+                        <br>
                         Total Customers: {{cart.totalCustomers}}
-                </p>
+                </div>
+                <br>
+                
         </div>
 
 
@@ -37,15 +38,31 @@
                 <h1>Design Patterns</h1>
                 <p>
                         1.) Decorator Pattern
+                        <br>
+                        <img src='assets/img/decorator.PNG'>
+                        <br>
+                        This pattern is used to decorate the get started page on the home page.
                 </p><br>
                 <p>
                         2.) Facade Pattern
+                        <br>
+                        <img src='assets/img/facade.PNG'>
+                        <br>
+                        This pattern is used on the menu page to add functionality to the lunch and dinner items.
                 </p><br>
                 <p>
                         3.) Iterator Pattern
+                        <br>
+                        <img src='assets/img/iterator.PNG'>
+                        <br>
+                        This pattern is used to iterate through the items in the cart.
                 </p><br>
                 <p>
                         4.) Template Pattern
+                        <br>
+                        <img src='assets/img/template.PNG'>
+                        <br>
+                        This pattern is used within the navbar of the website.
                 </p><br>
         </div>
 
@@ -54,21 +71,21 @@
                 <h1>Getting Started</h1>
                 <div class="row">
                         Step {{step1}}
-                         <div><button class="next" (click) = "Next1()">Next</button></div>
+                         
                 </div>
                         
                                         
-                <div *ngIf="!next1" class="row"> 
+                <div class="row"> 
                          Step {{step2}}
-                        <div><button class="next" (click) = "Next2()">Next</button></div> 
+                        
                  </div> 
 
-                 <div *ngIf="!next2" class="row">
+                 <div class="row">
                          Step {{step3}}
-                        <div><button class="next" (click) = "Next3()">Next</button> </div>
+                        
                  </div>
                         
-                  <div *ngIf="!next3" class="row">
+                  <div class="row">
                         Step {{step4}}
                 </div>
         </div>

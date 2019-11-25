@@ -28,7 +28,7 @@ export class CartComponent implements OnInit {
     private afAuth: AngularFireAuth,
     private db: AngularFireDatabase,
     private router: Router,
-    private cart: CartService
+    public cart: CartService
   ) {
     this.afAuth.authState.subscribe(
       (auth) => {
@@ -38,6 +38,8 @@ export class CartComponent implements OnInit {
         } else {
           this.user_name = auth.displayName;
           this.user_email = auth.email;
+          this.cart.userDisplayName = auth.displayName;
+          this.cart.userEmail = auth.email;
         }
       }
     );
@@ -64,7 +66,7 @@ export class CartComponent implements OnInit {
   ngOnInit() {
 
 
-    this.GetItems();
+    this.cart.GetItems(this.cart.userDisplayName);
 
 
     const cartRepository: CartRepository = new CartRepository();
@@ -77,40 +79,26 @@ export class CartComponent implements OnInit {
 
   }
 
-async GetItems() {
-   await (async () => {
-    const ref = this.db.database.ref('/cart/' + this.user_name);
-    ref.once('value').then((snap) => {
-      if (snap.val() != null) {
-      for (let i = 0; i < Object.keys(snap.val()).length; i++) {
-          this.array.push({name: snap.val()[Object.keys(snap.val())[i]].name, price: snap.val()[Object.keys(snap.val())[i]].price});
-          this.total = this.total + Number(this.array[i].price);
-        }
-      }
-    });
-  })();
-}
 
-async DeleteItems() {
-  this.db.database.ref('/cart/' + this.user_name).remove()
-  .then(() => {
-    this.cart.array = [];
-    this.array = [];
-    this.cart.cartCount = 0;
-    this.cart.GetItems(this.user_name);
-  }
-  );
-}
+
+
 
 async submitItems() {
-  this.DeleteItems();
-  alert("Thank you for you order! Confirmation email sent to your inbox.");
-}
-
-
-sendEmail() {
-
-
+  try {
+    let totalval = this.cart.totalValue;
+    console.log(totalval);
+    await this.cart.submit();
+    console.log('finished submital')
+    this.cart.sendConfirmation();
+    console.log('finished email')
+    this.cart.DeleteItems();
+    alert("Thank you for you order! Confirmation email sent to your inbox.");
+  }
+  catch {
+    this.cart.DeleteItems();
+    alert("Thank you for you order! Confirmation email sent to your inbox.");
+  }
+  
 }
 
 }

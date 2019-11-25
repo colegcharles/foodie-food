@@ -1,37 +1,37 @@
 .start{
-    width: 300px;
+    width: 24.6%;
     height: 100px;
-    margin-left: 10%;
+    margin-left: 1%;
     margin-top: 5%;
-    background-color: green;
+    background-color: lightgrey;
     border: 2px solid black;
   }
 
   .start:hover {
     background-color: white; 
-    color: green; 
+    color: lightslategray; 
   }
 
 .about{
-    width: 300px;
+    width: 24.6%;
     height: 100px;
     margin-left: 3%;
     margin-top: 5%;
-    background-color: lightblue;
+    background-color: lightslategrey;
     border: 2px solid black;
 }
 
 .about:hover {
     background-color: white; 
-    color: lightblue; 
+    color: lightslategray; 
   }
 
 .patterns{
-    width: 300px;
+    width: 24.6%;
     height: 100px;
     margin-left: 3%;
     margin-top: 5%;
-    background-color: lightslategrey;
+    background-color:#0f3a4a;
     border: 2px solid black;
 }
 
@@ -48,7 +48,7 @@
 
 h1{
     margin-left: 10%;
-    margin-top: 5%;
+    margin-top: 2%;
 }
 
 p{
@@ -56,6 +56,16 @@ p{
     margin-right: 10%;
     font-size: 120%;
     margin-top: 3%;
+}
+
+#about {
+  margin-bottom: 0px;
+}
+
+#sales {
+  margin-left: 10%;
+  font-size: 120%;
+  font-weight: bold;
 }
 
 .next{
@@ -86,3 +96,4 @@ header{
     margin-left: 10%;
     margin-right: 10%;
 }
+

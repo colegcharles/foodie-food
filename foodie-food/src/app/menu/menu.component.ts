@@ -20,6 +20,7 @@ export class MenuComponent implements OnInit {
   foodItenRef$: AngularFireList<any>;
   breakfast: string[] = [];
   lunch: string[] = [];
+  dinner: string[] = [];
   foodMaker = new foodMaker();
   constructor(
     private afAuth: AngularFireAuth,
@@ -30,6 +31,7 @@ export class MenuComponent implements OnInit {
     for (let i = 0; i < 3; i++) {
       this.breakfast.push(this.foodMaker.getBreakfast()[i]);
       this.lunch.push(this.foodMaker.getLunch()[i]);
+      this.dinner.push(this.foodMaker.getDinner()[i]);
       this.afAuth.authState.subscribe(
         (auth) => {
           if (auth == null) {
@@ -60,9 +62,9 @@ export class MenuComponent implements OnInit {
   }
 
   addToCart(name: string, price: string){
-    this.foodObject = this.db.list('cart/' + this.user_name);
+    // this.foodObject = this.db.list('cart/' + this.user_name);
 
-    this.foodObject.push({
+    this.cart.array.push({
       name: name,
       price: price
     });

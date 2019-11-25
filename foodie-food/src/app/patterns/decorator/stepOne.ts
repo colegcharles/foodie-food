@@ -13,6 +13,6 @@ export class StepOne extends StepDecorator {
     }
 
     decorateStepOne(): string {
-        return '1: Create an account by clicking Log In';
+        return '1: Log into the website via the Log In / Sign Up';
     }
 }

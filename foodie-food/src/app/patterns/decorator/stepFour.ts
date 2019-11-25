@@ -9,10 +9,10 @@ export class StepFour extends StepDecorator {
     }
 
     decorate(): string {
-        return this.decorateStepOne();
+        return this.decorateStepFour();
     }
 
-    decorateStepOne(): string {
-        return '4: Once your order is placed the food will be delivered right to your door!';
+    decorateStepFour(): string {
+        return '4: Head to the checkout page where you can see your total. Once complete hit submit, and a confirmation email will arrive in your inbox.';
     }
 }

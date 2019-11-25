@@ -1,47 +1,74 @@
 <div class="container">
   <div class="row">
       <div class="col-12 mt-4">
-          <h3 class="text-center">Lunch</h3>
+          <h3 class="text-center">Breakfast</h3>
           <hr class="accent my-5">
       </div>
       <div class="card-columns">
           <div class="card card-body">
               <h6 class="text-truncate">{{breakfast[0]}}</h6>
-              <p class="small"># egg whites, served with a pile of bacon.</p>
+              <p class="small">Four egg whites scrambled with spinach and red peppers, served with a Heathly pile of bacon. <b>$7</b></p>
               <button (click)="addToCart('Eggs and Bacon', '7.00')">add to cart</button>
           </div>
           <div class="card card-body">
             <h6 class="text-truncate">{{breakfast[1]}}</h6>
-            <p class="small">8oz serloin steak and 3 hard boiled eggs.</p>
+            <p class="small">8 oz Serloin Steak cooked to your liking and three hard boiled eggs. <b>$8</b></p>
             <button (click)="addToCart('Steak and Eggs', '8.00')">add to cart</button>
         </div>
           <div class="card card-body">
               <h6 class="text-truncate">{{breakfast[2]}}</h6>
-              <p class="small">5 servings of cereal.</p>
+              <p class="small">Five servings of cereal of up to three types of your choice <b>$6 </b> <small>*Milk not included</small></p>
               <button (click)="addToCart('Cereal', '6.00')">add to cart</button>
           </div>
       </div>
       <div class="col-12 mt-4">
-          <h3 class="text-center">Dinner</h3>
+          <h3 class="text-center">Lunch</h3>
           <hr class="accent my-5">
       </div>
       <div class="card-columns">
           <div class="card card-body">
               <h6 class="text-truncate">{{lunch[0]}}</h6>
-              <p class="small">Sustainably raised Argentine red shrimp, fried golden brown and served with chipotle mayonnaise for dipping.</p>
+              <p class="small">Sustainably raised Argentine red shrimp, fried golden brown and served with chipotle mayonnaise for dipping. <b>$9</b></p>
               <button (click)="addToCart('Fried Shrimp','9.00')">add to cart</button>
           </div>
           <div class="card card-body">
               <h6 class="text-truncate">{{lunch[1]}}</h6>
-              <p class="small">Crusty sliced Italian bread topped with basil, extra virgin olive oil, chopped tomatoes, garlic and fresh mozzarella cheese. Baked until it is nice and crispy and served with a side of balsamic reduction.</p>
+              <p class="small">Crusty sliced Italian bread, chopped tomatoes,fresh mozzarella cheese. Baked until it is nice and crispy and served with a side of balsamic. <b>$10</b></p>
               <button (click)="addToCart('Tuscan Bruschetta', '10.00')">add to cart</button>
           </div>
           <div class="card card-body">
               <h6 class="text-truncate">{{lunch[2]}}</h6>
-              <p class="small">Jack and cheddar cheese, chopped mild green chilies in a pan grilled flour tortilla. Served with sour cream, guacamole and fresh pico de gallo.</p>
+              <p class="small">Jack and cheddar cheese, chopped mild green chilies in a pan grilled flour tortilla. Served with sour cream, guacamole and fresh pico de gallo. <b>$9</b></p>
               <button (click)="addToCart('quesadilla', '9.00')">add to cart</button>
           </div>
       </div>
+
+      <div class="container">
+        <div class="row">
+            <div class="col-12 mt-4">
+                <h3 class="text-center">Dinner</h3>
+                <hr class="accent my-5">
+            </div>
+            <div class="card-columns">
+                <div class="card card-body">
+                    <h6 class="text-truncate">{{dinner[0]}}</h6>
+                    <p class="small">Parmesan crusted chicken breast, seasoned with fresh Italian seasonings, topped with homemade marinara sauce and shredded mozzarella cheese.<b>$14</b></p>
+                    <button (click)="addToCart('Parmesan Chicken', '14.00')">add to cart</button>
+                </div>
+                <div class="card card-body">
+                  <h6 class="text-truncate">{{dinner[1]}}</h6>
+                  <p class="small">A traditional fried rice that includes vegetables, chicken, steak, shrimp and pork.Served with egg drop soup and garden salad with ginger vingerette dressing. <b>$8</b></p>
+                  <button (click)="addToCart('House Fried Rice', '8.00')">add to cart</button>
+              </div>
+                <div class="card card-body">
+                    <h6 class="text-truncate">{{dinner[2]}}</h6>
+                    <p class="small">A roasted red and green pepper stuffed with ground turkey, wild rice,and corn. Seasoned with lime and cilantro, topped with shredded monterey jack cheese <b>$10</b></p>
+                    <button (click)="addToCart('Stuffed Peppers', '10.00')">add to cart</button>
+                </div>
+            </div>
+            <div class="col-12 mt-4">
+     
+      
      
       
       <div class="col-12 mt-4">

@@ -9,10 +9,10 @@ export class StepTwo extends StepDecorator {
     }
 
     decorate(): string {
-        return this.decorateStepOne();
+        return this.decorateStepTwo();
     }
 
-    decorateStepOne(): string {
-        return '2: Check out our menu and pick a meal plan';
+    decorateStepTwo(): string {
+        return '2: Read over our menu.';
     }
 }

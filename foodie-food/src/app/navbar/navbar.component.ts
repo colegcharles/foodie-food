@@ -8,7 +8,7 @@ import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { Menu } from '../patterns/template/menu';
 import { Cart } from '../patterns/template/cart';
 import { auth } from 'firebase';
-import { CartService } from '../services/cartService.ts';
+
 
 @Component({
   selector: 'app-navbar',
@@ -27,7 +27,7 @@ export class NavbarComponent implements OnInit {
     private afAuth: AngularFireAuth,
     private db: AngularFireDatabase,
     private router: Router,
-    private cart: CartService
+    public cart: CartService
   ) {}
 
 
@@ -44,6 +44,8 @@ export class NavbarComponent implements OnInit {
             this.isLoggedIn = true;
             this.userDisplayName = auth.displayName;
             this.userEmail = auth.email;
+            this.cart.userDisplayName = auth.displayName;
+            this.cart.userEmail = auth.email;
             this.router.navigate(['']);
           }
 

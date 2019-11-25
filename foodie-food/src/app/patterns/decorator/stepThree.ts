@@ -9,10 +9,10 @@ export class StepThree extends StepDecorator {
     }
 
     decorate(): string {
-        return this.decorateStepOne();
+        return this.decorateStepThree();
     }
 
-    decorateStepOne(): string {
-        return '3: Look at the prices and finish your purchase by going to checkout';
+    decorateStepThree(): string {
+        return '3: Add as many items as you\'d like to the cart';
     }
 }
