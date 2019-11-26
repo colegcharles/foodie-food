@@ -1,0 +1,53 @@
+.menu {
+    margin-left: 10%;
+    margin-right: 10%;
+    display: inline-block;
+    width: 200px;
+    font-size:30px;
+    font-weight: bold;
+}
+
+.pp {
+    margin-left: 31%;
+    margin-top: -44px;
+    font-size:30px;
+    font-weight: bold;
+}
+
+.name {
+    margin-left: 10%;
+    margin-top: 25px;
+ 
+}
+
+.price {
+    margin-top: -26px;
+    margin-left: 330px;
+
+ 
+}
+
+#button {
+    margin-left: 10%;
+}
+
+div {
+    margin-left: 10%;
+}
+
+#total {
+    background-color: lightgrey;
+    width: 380px;
+}
+
+#clear {
+    margin-left:10%;
+    margin-top: 10px;
+    width: 180px;
+}
+
+#sub {
+    margin-left: 10px;
+    width:180px;
+    margin-top: 10px;
+}

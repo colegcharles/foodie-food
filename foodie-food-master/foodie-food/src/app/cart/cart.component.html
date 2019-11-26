@@ -1,0 +1,16 @@
+<div class="menu">Item</div><div class="pp">Price</div>
+
+
+<div class="name" *ngFor="let item of cart.array" >{{item.name}} <div class="price">${{item.price}}</div></div> 
+<div class="name" id='total'>Total: <div class="price">${{cart.totalValue}}</div></div> 
+
+<button type="button" class="btn btn-warning" id="clear" (click)="cart.DeleteItems()">Clear Cart</button>
+
+
+    <button id="sub" (click)="submitItems()" type="button" class="btn btn-primary">Submit</button>
+    
+
+
+
+
+
