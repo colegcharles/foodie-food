@@ -13,8 +13,8 @@ import * as cors from 'cors';
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'colecharles1997@gmail.com',
-        pass: 'Goldfish2!'
+        user: 'xxx',
+        pass: 'xxx'
     }
 });
 
